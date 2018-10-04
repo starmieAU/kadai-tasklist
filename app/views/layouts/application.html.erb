@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<%#
+アプリケーションの共通部、こんな感じでコメントするとソースに現れない
+body部の yield に各viewの情報が乗る
+%>
 <html>
   <head>
     <title>Tasklist</title>
@@ -9,6 +13,15 @@
   </head>
 
   <body>
+    <%#
+    render で layouts/_flash_tasks の view をただ表示してる？
+    ・同階層なのにlayoutsから指定しているのはなぜか？
+      ->予想1.root的なのがviewsフォルダ
+      ->予想2.別に_flash_tasksだけでもいける
+    ・_flash_tasks.html.erbとflash_tasks.html.erbはなにかちがうのか？
+    %>
+    <%= render 'layouts/flash_tasks' %>
+    
     <%= yield %>
   </body>
 </html>

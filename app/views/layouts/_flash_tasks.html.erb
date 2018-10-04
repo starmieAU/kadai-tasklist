@@ -1,0 +1,8 @@
+<%#
+Controllerでflash[ラベル]に当てた情報を表示、
+多分flashはハッシュな感じ
+%>
+
+<% flash.each do |message_type, message| %>
+  <div><%= message %></div>
+<% end %>
