@@ -1,0 +1,12 @@
+<h1>Task詳細ページ</h1>
+
+<div>
+    <p>番号:<%= @task.id %></p>
+    <p>内容:<%= @task.content %></p>
+    <p>更新:<%= @task.updated_at %></p>
+    <p>作成:<%= @task.created_at %></p>
+</div>
+
+<p><%= link_to "cange", edit_task_path(@task) %></p>
+<p><%= link_to "delete", @task , method: :delete %></p>
+<p><%= link_to "return to top_page", tasks_path %></p>
