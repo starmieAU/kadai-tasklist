@@ -3,7 +3,7 @@ class TasksController < ApplicationController
     
     def index
         @tasks = Task.all
-        flashtest
+        #flashtest
         #index -> show , index -> edit なら flash情報が残ってた
         #index -> show -> edit なら index -> edit の段階でflash情報が消えた
         #flash.nowはどちらの場合でも消えた
