@@ -1,8 +1,4 @@
 <h1>Task更新ページ</h1>
 
-<%= form_for (@task) do |f|%>
-    <%= f.label :content ,"こんてんと" %>
-    <%= f.text_field :content %>
-    <%= f.submit "更新"%>
-<% end %>
+<%= render 'form', task: @task%>
 <%= link_to "go to top", tasks_path %>
