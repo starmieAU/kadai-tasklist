@@ -5,23 +5,26 @@ body部の yield に各viewの情報が乗る
 %>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Tasklist</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
 
   <body>
-    <%#
-    render で layouts/_flash_tasks の view をただ表示してる？
-    ・同階層なのにlayoutsから指定しているのはなぜか？
-      ->予想1.root的なのがviewsフォルダ
-      ->予想2.別に_flash_tasksだけでもいける
-    ・_flash_tasks.html.erbとflash_tasks.html.erbはなにかちがうのか？
-    %>
-    <%= render 'layouts/flash_tasks' %>
+    <%= render 'tasks/navbar'%>
     
-    <%= yield %>
+    <div class="container">
+      <%= render 'layouts/flash_tasks' %>
+      <%= yield %>
+    </div>
+
   </body>
 </html>
