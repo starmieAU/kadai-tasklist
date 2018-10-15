@@ -1,6 +1,8 @@
-<h1>Task一覧ページ</h1>
-<%# flash[:view_flash]='indexのviewにflash'%>
-<%# flash.now[:view_flash_now]='indexのviewにflash.now'%>
+<%if logged_in? %>
+
+    <h1>Task一覧ページ</h1>
+    <%# flash[:view_flash]='indexのviewにflash'%>
+    <%# flash.now[:view_flash_now]='indexのviewにflash.now'%>
 
     <ul>
         <% @tasks.each do |task|%>
@@ -17,3 +19,13 @@
     <div>
         <%= link_to "新規Task登録", new_task_path %>
     </div>
+<%else%>
+    
+  <div class="center jumbotron">
+    <div class="text-center">
+      <h1>I am Tasklist</h1>
+      <%= link_to 'Please Login!', login_path, class: 'btn btn-lg btn-primary' %>
+    </div>
+  </div>
+    
+<%end%>

@@ -1,6 +1,7 @@
 <h1>Task詳細ページ</h1>
 
 <div>
+    <p>投稿者:<%= @task.user.name%></p>
     <p>番号:<%= @task.id %></p>
     <p>内容:<%= @task.content %></p>
     <p>更新:<%= @task.updated_at %></p>
